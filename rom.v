@@ -6,7 +6,7 @@ module rom32k(
 
     initial begin
         $display("🔄 Loading prog.hex...");
-        $readmemh("C:/verilog/hack_cpu/prog.hex", memory);
+        $readmemh("prog.hex", memory);
         $display("✅ prog.hex loaded.");
     end
 
