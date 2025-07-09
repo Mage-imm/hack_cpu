@@ -21,7 +21,7 @@ module hack_alu(
             x1 = ~x1;
         end
 
-        // --- Step 2: Handle zy and ny ---
+        
         if (zy == 1) begin
             y1 = 16'b0;
         end else begin
@@ -32,21 +32,21 @@ module hack_alu(
             y1 = ~y1;
         end
 
-        // --- Step 3: ALU operation (f bit) ---
+    
         if (f == 1) begin
             result = x1 + y1;   // Add
         end else begin
             result = x1 & y1;   // AND
         end
 
-        // --- Step 4: Final NOT if no == 1 ---
+     
         if (no == 1) begin
             out = ~result;
         end else begin
             out = result;
         end
 
-        // --- Step 5: Flags ---
+     
         if (out == 16'b0) begin
             zr = 1;
         end else begin
